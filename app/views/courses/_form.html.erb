@@ -1,0 +1,52 @@
+<div class="form-horizontal">
+<%= form_for(@course) do |f| %>
+  <% if @course.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@course.errors.count, "error") %> prohibited this course from being saved:</h2>
+
+      <ul>
+      <% @course.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="row student-form-head" >
+    <div class="col-sm-12">
+      <h4>Course Details</h4>
+    </div>
+  </div>
+  <div class="row student-form-container" >
+    <div class="col-sm-2"></div>
+    <div class="col-sm-8">
+  <div class="form-group">
+        <label class="col-sm-3 control-label">Name</label>
+        <div class="col-sm-9">
+          <%= f.text_field :name , :class => "form-control",:placeholder => "Name"%>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-sm-3 control-label">Monthly Fee</label>
+        <div class="col-sm-9">
+          <%= f.text_field :monthly_fee , :class => "form-control",:placeholder => "Monthly Fee"%>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-sm-3 control-label">Total Fee</label>
+        <div class="col-sm-9">
+          <%= f.text_field :total_fee , :class => "form-control",:placeholder => "Total Fee"%>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-2"></div>
+    </div>
+    <div class="row student-form-container" >
+      <div class="col-sm-9"></div>
+      <div class="col-sm-3">
+        <%= f.submit :class =>"btn btn-primary" %>
+        <%= link_to 'Back', courses_path ,:class =>"btn btn-default"%>
+    </div>
+  </div>
+
+<% end %>
+</div>

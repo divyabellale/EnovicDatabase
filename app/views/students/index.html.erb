@@ -1,0 +1,64 @@
+<div class="container">
+
+  <div class="row">
+      <h2 class="title-headings pull-left" style="">Students Details</h2>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-8">
+      <%= form_tag import_students_path,:class=>"form-inline", multipart: true do %>
+      <div class="form-group">
+        <label class="sr-only" for="">Import Data</label>
+        <%= file_field_tag :file ,:class=>"form-control"%>
+      </div>
+      <%= submit_tag "Import",:class =>"btn btn-default" %>
+      <% end %>
+    </div>
+    <div class="col-sm-4">
+      <div class="row">
+        <div class="col-sm-1"></div>
+        <div class="col-sm-4">
+         <%= link_to 'Course Details', courses_path ,:class => "btn btn-default"%>
+        </div>
+        <div class="col-sm-3 dropdown">
+            <a href="#" class="btn-dropdown dropdown-toggle btn btn-primary" data-toggle="dropdown">Dowload<span class="caret"></span></a>
+            <ul class="dropdown-menu" role="menu">
+              <li><%= link_to "CSV", download_csv_or_excel_path(format: "csv") %></li>
+              <li><%= link_to "Excel", download_csv_or_excel_path(format: "xls") %></li>
+            </ul>
+        </div>
+        <div class="col-sm-4">
+         <%= link_to 'New Student', new_student_path ,:class => "btn btn-default"%>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<br/>
+
+  <div class="row">
+    <%= form_tag students_path, :method => 'get', :class=>"form-inline",:id => "student_search_form" do %>
+    <div class="col-sm-3">
+     <div class="form-group">
+        <%= text_field_tag :search_name, params[:search_name], :class => "form-control", :placeholder => "Name" %>
+      </div>
+    </div>
+    <div class="col-sm-3">
+      <div class="form-group">
+     <%= text_field_tag :search_email, params[:search_email], :class => "form-control", :placeholder => "Email" %>
+      </div>
+    </div>
+    <div class="col-sm-3">
+      <div class="form-group">
+     <%= select_tag :search_course,options_for_select(get_course), :class => "form-control",:prompt => "Select Course"%>
+      </div>
+    </div>
+    <div class="col-sm-3"><%= submit_tag 'search' ,:remote => true,:class => "btn btn-default" %></div>
+    <div class="col-sm-3"></div>
+    <% end %>
+  </div>
+<br/>
+  <div class="students-list">
+    <%= render 'students' %>
+  </div>
+</div>

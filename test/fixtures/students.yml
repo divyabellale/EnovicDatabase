@@ -1,0 +1,39 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  father_name: MyString
+  student_type: MyString
+  address1: MyString
+  phone: 1
+  email: MyString
+  dob: 2014-09-02
+  father_occupation: MyString
+  fee_status: MyString
+  date_of_admission: 2014-09-02
+  course: MyString
+  village: MyString
+  post: MyString
+  panchayat: MyString
+  hobli: MyString
+  taluq: MyString
+  district: MyString
+
+two:
+  name: MyString
+  father_name: MyString
+  student_type: MyString
+  address1: MyString
+  phone: 1
+  email: MyString
+  dob: 2014-09-02
+  father_occupation: MyString
+  fee_status: MyString
+  date_of_admission: 2014-09-02
+  course: MyString
+  village: MyString
+  post: MyString
+  panchayat: MyString
+  hobli: MyString
+  taluq: MyString
+  district: MyString

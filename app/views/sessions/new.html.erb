@@ -1,0 +1,41 @@
+<div class="container form-horizontal">
+  <div class="row" style="margin-top:50px; margin-bottom: 25px;">
+    <div class="col-sm-8"></div>
+    <div class="col-sm-4">
+      <h1 class="bold" style="color:#F06074;">Sign In</h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-8">
+    </div>
+    <div class="col-sm-4">
+      <%= form_tag sessions_path do %>
+      
+      <div class="form-group">
+        <label class="col-sm-3 control-label">Email</label>
+        <div class="col-sm-9">
+          <%= text_field_tag :email, params[:email],:class=>"form-control" %>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-sm-3 control-label">Password</label>
+        <div class="col-sm-9">
+          <%= password_field_tag :password, params[:email],:class=>"form-control" %>
+        </div>
+      </div>
+     <div class="form-group">
+        <div class="col-sm-offset-3 col-sm-9">
+          <%= submit_tag "Sign In" ,:class=>"btn btn-default"%>
+        </div>
+      </div>
+      <% end %>
+    </div>
+  </div>
+
+</div>
+
+
+      
+
+      
+

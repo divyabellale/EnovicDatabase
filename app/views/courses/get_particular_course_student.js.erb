@@ -1,0 +1,29 @@
+<div class="container">
+
+<div class="row">
+      <h2 class="title-headings pull-left" style="">Course Details</h2>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-8">
+    </div>
+    <div class="col-sm-4">
+      <div class="row">
+        <div class="col-sm-3"></div>
+        <div class="col-sm-5">
+         <%= link_to 'Student Home Page', students_path ,:class => "btn btn-primary"%>
+        </div>
+        <div class="col-sm-4">
+         <%= link_to 'New Course', new_course_path ,:class => "btn btn-default"%>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br>
+<div class="row">
+<div class="course-list">
+    <%= render 'courses' %>
+  </div>
+</div>
+
+</div>

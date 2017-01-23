@@ -1,0 +1,78 @@
+<div class="container">
+  <p id="notice"><%= notice %></p>
+  <div class="row student-form-container" >
+
+
+<div class="col-sm-3">
+<h4 style="color:blue;">Personal Details</h4>
+  <p>
+  <strong>Name:</strong>
+  <%= @student.name %>
+</p>
+<p>
+  <strong>Dob:</strong>
+  <%= @student.dob %>
+</p>
+<h4 style="color:blue;">Parent Details</h4>
+<p>
+  <strong>Father name:</strong>
+  <%= @student.father_name %>
+</p>
+<p>
+  <strong>Father occupation:</strong>
+  <%= @student.father_occupation %>
+</p>
+<h4 style="color:blue;">Academy Details</h4>
+
+<p>
+  <strong>Student type:</strong>
+  <%= @student.student_type %>
+</p>
+<p>
+  <strong>Date of admission:</strong>
+  <%= @student.date_of_admission %>
+</p>
+<p>
+  <strong>Course:</strong>
+  <%= @student.course.name %>
+</p>
+
+</div>
+<div class="col-sm-3">
+  <h4 style="color:blue;">Contact Details</h4>
+<p>
+  <strong>Address1:</strong>
+  <%= @student.address1 %>
+</p>
+
+<p>
+  <strong>Phone:</strong>
+  <%= @student.phone %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @student.email %>
+</p>
+<p><strong>Address2:</strong>
+  <%= @student.village %> <%= @student.post %><br/>
+  <%= @student.panchayat %>  <%= @student.hobli %><br/>
+  <%= @student.taluq %>  <%= @student.district %>
+</p>
+</div>
+<div class="col-sm-4">
+   <%= image_tag @student.image_url(:thumb) ,:width => "100%",:height => "100%" if @student.image? %>
+</div>
+<div class="col-sm-1"></div>
+</div>
+
+<div class="row student-form-container" >
+    <div class="col-sm-9"></div>
+    <div class="col-sm-3">
+      <%= link_to 'Edit', edit_student_path(@student),:class =>"btn btn-primary" %>
+      <%= link_to 'Back', students_path ,:class =>"btn btn-default"%>
+      <a onclick="javascript:print(); return false;" href="#" class="btn btn-primary"><span class=""></span>&nbsp;Print
+    </a>
+    </div>
+  </div>
+</div>

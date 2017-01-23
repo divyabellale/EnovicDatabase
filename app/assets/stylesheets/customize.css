@@ -1,0 +1,23 @@
+.title-description {
+  font-size:50px;font-weight;font-style:italic;color:#9F85FF;
+}
+
+.title-description span{
+  color:#F06074;
+}
+
+.title-headings {
+  color:#F06074;
+}
+
+.student-form-head {
+background-color: #7A7F89;
+margin: 0px 10px;
+color: #fff;
+}
+
+.student-form-container {
+background-color: #f6f6f6;
+padding: 20px 40px;
+margin: 0px 10px 40px 10px;
+}

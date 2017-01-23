@@ -1,0 +1,184 @@
+
+<div class="form-horizontal">
+  <%= form_for @student,:html => {:multipart => true} do |f| %>
+  <% if @student.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@student.errors.count, "error") %> prohibited this student from being saved:</h2>
+
+    <ul>
+      <% @student.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+  <% end %>
+
+  <div class="row student-form-head" >
+    <div class="col-sm-12">
+      <h4>Personal Details</h4>
+    </div>
+  </div>
+  <div class="row student-form-container" >
+    <div class="col-sm-6">
+      <div class="form-group">
+        <label class="col-sm-3 control-label">Name</label>
+        <div class="col-sm-9">
+          <%= f.text_field :name , :class => "form-control",:placeholder => "Name"%>
+        </div>
+      </div>
+      <div class="form-group">
+
+        <label class="col-sm-3 control-label">Photo</label>
+        <div class="col-sm-9">
+          <div class="student-image-container">
+            <% if f.object.image.present? %>
+            <%= image_tag f.object.image_url(:thumb),:width => '50%', :height => '50%'%>
+            <% else %>
+            <%= image_tag "/assets/default_boy.png",:width => '50%', :height => '50%'%>
+            <% end %>
+          </div>
+          <%= f.file_field :image,:class => "file_image_upload"%>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-6">
+      <div class="form-group">
+        <label class="col-sm-3 control-label">Date Of Birth</label>
+        <div class="col-sm-9">
+          <%= f.text_field :dob , :class => "form-control",:placeholder => "Date Of Birth" %>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="row student-form-head">
+    <div class="col-sm-12">
+      <h4>Parent Details</h4>
+    </div>
+  </div>
+  <div class="row student-form-container" >
+    <div class="col-sm-6">
+      <div class="form-group">
+        <label class="col-sm-3 control-label">Father Name</label>
+        <div class="col-sm-9">
+          <%= f.text_field :father_name , :class => "form-control",:placeholder => "Father Name"%>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-6">
+      <div class="form-group">
+        <label class="col-sm-3 control-label">Father Occupation</label>
+        <div class="col-sm-9">
+          <%= f.text_field :father_occupation , :class => "form-control",:placeholder => "Father Occupation" %>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row student-form-head">
+    <div class="col-sm-12">
+      <h4>Accademyc Details</h4>
+    </div>
+  </div>
+  <div class="row student-form-container" >
+    <div class="col-sm-6">
+      <div class="form-group">
+        <label class="col-sm-3 control-label">Course</label>
+        <div class="col-sm-9">
+          <%= f.select :course_id, get_course, {},
+        :class => "form-control" %>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-sm-3 control-label">Student Type</label>
+        <div class="col-sm-9">
+          <%= f.text_field :student_type  , :class => "form-control",:placeholder => "Student Type"%>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-6">
+      <div class="form-group">
+        <label class="col-sm-3 control-label">Date Of Admission</label>
+        <div class="col-sm-9">
+          <%= f.text_field :date_of_admission , :class => "form-control",:placeholder => "Date Of Admission" %>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row student-form-head">
+    <div class="col-sm-12">
+      <h4>Contact Details</h4>
+    </div>
+  </div>
+
+  <div class="row student-form-container" >
+    <div class="col-sm-6">
+      <div class="form-group">
+        <label class="col-sm-3 control-label">Email</label>
+        <div class="col-sm-9">
+          <%= f.text_field :email , :class => "form-control",:placeholder => "Email"%>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-sm-3 control-label">Phone</label>
+        <div class="col-sm-9">
+          <%= f.text_field :phone, :class => "form-control",:placeholder => "Phone"%>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-sm-3 control-label">Address1</label>
+        <div class="col-sm-9">
+          <%= f.text_field :address1 , :class => "form-control",:placeholder => "Address1" %>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-sm-3 control-label">Village</label>
+        <div class="col-sm-9">
+          <%= f.text_field :village , :class => "form-control",:placeholder => "Village" %>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-sm-3 control-label">Post</label>
+        <div class="col-sm-9">
+          <%= f.text_field :post , :class => "form-control",:placeholder => "Post" %>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-6">
+      <div class="form-group">
+        <label class="col-sm-3 control-label">Panchayat</label>
+        <div class="col-sm-9">
+          <%= f.text_field :panchayat, :class => "form-control",:placeholder => "Panchayat"%>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-sm-3 control-label">Hobli</label>
+        <div class="col-sm-9">
+          <%= f.text_field :hobli, :class => "form-control",:placeholder => "Hobli"%>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-sm-3 control-label">Taluq</label>
+        <div class="col-sm-9">
+          <%= f.text_field :taluq, :class => "form-control",:placeholder => "Taluq"%>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-sm-3 control-label">District</label>
+        <div class="col-sm-9">
+          <%= f.text_field :district, :class => "form-control",:placeholder => "District"%>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row student-form-container" >
+    <div class="col-sm-9"></div>
+    <div class="col-sm-3">
+      <%= f.submit :class =>"btn btn-primary" %>
+      <%= link_to 'Back', students_path ,:class =>"btn btn-default"%>
+    </div>
+  </div>
+  <% end %>
+</div>

@@ -1,0 +1,13 @@
+<div class="container">
+
+<div class="row">
+      <h2 class="title-headings pull-left" style="">Students of <%= @course.name %></h2>
+ </div>
+
+<div class="students-list">
+    <%= render 'students/students' %>
+</div>
+<div class="row">
+      <%= link_to 'Course Details', courses_path ,:class => "btn btn-default"%>
+ </div>
+</div>

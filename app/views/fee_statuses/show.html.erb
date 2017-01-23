@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Amount paid:</strong>
+  <%= @fee_status.amount_paid %>
+</p>
+
+<p>
+  <strong>Paid date:</strong>
+  <%= @fee_status.paid_date %>
+</p>
+
+<%= link_to 'Edit', edit_fee_status_path(@fee_status) %> |
+<%= link_to 'Back', fee_statuses_path %>

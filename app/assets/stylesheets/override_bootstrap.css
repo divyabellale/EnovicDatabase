@@ -1,0 +1,60 @@
+body {
+    color: #222222;}
+
+.navbar {
+  background : #6E8BC5;
+}
+
+.navbar-nav > li > a{
+  font-size: 17px;
+  color:#fff;
+}
+
+.navbar-nav > li {
+  font-size: 17px;
+  color:#fff;
+}
+
+.nav > li > a:hover,
+.nav > li > a:focus {
+  background-color: #6E8BC5;
+}
+
+.nav .open > a, .nav .open > a:hover, .nav .open > a:focus {
+    background-color: #6E8BC5;
+    border-color: #6E8BC5;
+}
+
+.btn-default {
+    background-color: #F06074;
+    border-color: #F06074;
+    color: #fff;
+}
+
+.btn-default:hover,
+.btn-default:focus,
+.btn-default:active,
+.btn-default.active,
+.open > .dropdown-toggle.btn-default {
+  color: #fff;
+  background-color:#F38090;
+  border-color:#F38090;
+}
+
+/*.table-striped > tbody > tr:nth-child(odd) > td,
+.table-striped > tbody > tr:nth-child(odd) > th {
+  background-color: #FFF0F0;
+}
+*/
+ table thead tr th {
+    font-size:15px;font-weight:normal;
+    background-color: #6E8BC5;
+    border-bottom: 2px solid #FFFFFF;
+    color: #fff;
+}
+.form-horizontal .control-label {text-align: center;}
+
+p {
+
+  font-size: 14px;
+}
